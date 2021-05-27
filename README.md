@@ -1,9 +1,19 @@
 # Hotel-Room-Reservation
-
+======================================CONTRIBUTORS========================================
 ABHIJIT BISWAS 
 AVINASH KUMAR 
 SRUTHY K
 RACHANA L 
+
+ =========================================== DESCRIPTION ========================================
+This project is all about hotel room reservation website. Here we are using HTML, CSS, JavaScript, Bootstrap as frontends and backend as MySQL linked by PHP. 
+The project all contain seven php pages connected to one database (project) consisting five tables (loginform, newreg, query, rooms, feedback).
+Table login form contains details about registered users like user name,email and password.
+Newreg is the table descibing about room registeration containing details like name,email,address,country,proof,number of rooms and type of rooms.
+Querey is the complaint storing table with room number,complaints.
+Rooms is the table storing datas of room like room number,type of room,status.
+Feedback describes about name,email and comments.
+
 
 ==================== WORK DISTRIBUTION =========================
 1.FrontEnd->Login (index.php)-->Avinash
@@ -38,12 +48,5 @@ newreg--->Sruthy
 query--->Abhijit
 rooms--->Abhijit
 feedback--->Sruthy
-                  =========================================== DESCRIPTION ========================================
-This project is all about hotel room reservation website. Here we are using HTML, CSS, JavaScript, Bootstrap as frontends and backend as MySQL linked by PHP. 
-The project all contain seven php pages connected to one database (project) consisting five tables (loginform, newreg, query, rooms, feedback).
-Table login form contains details about registered users like user name,email and password.
-Newreg is the table descibing about room registeration containing details like name,email,address,country,proof,number of rooms and type of rooms.
-Querey is the complaint storing table with room number,complaints.
-Rooms is the table storing datas of room like room number,type of room,status.
-Feedback describes about name,email and comments.
+                 
                  ============================================ THE END ============================================
