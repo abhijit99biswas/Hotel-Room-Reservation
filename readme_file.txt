@@ -2,10 +2,10 @@
 ******************* HOTEL RESERVATION ************************
 
 ===================== CONTRIBUTERS =============================
-ABHIJIT BISWAS (19MCA1089)
-AVINASH KUMAR (19MCA1039)
-SRUTHY K (19MCA1053)
-RACHANA L (19MCA1096)
+ABHIJIT BISWAS 
+AVINASH KUMAR 
+SRUTHY K
+RACHANA L 
 
 ==================== WORK DISTRIBUTION =========================
 1.FrontEnd->Login (index.php)-->Avinash
