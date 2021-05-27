@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Payment</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body
+		{
+			background-color: #23272b;
+			font-family: Arial,Helvetica,sans-serif;	
+		}
+		.wrapper        /* Container */
+		{
+			background-color: #ffef;
+			width: 500px;
+			padding: 25px;
+			margin: 25px auto 0;
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+		}
+		.wrapper h2{	/* for design Payment title*/
+			background-color: #fcfcfc;
+			color: #f33446;
+			font-size: 24px;					
+			padding: 10px;
+			margin-bottom: 20px;
+			text-align: center;
+			border: 1px dotted #333;
+		}
+		h4
+		{		/* for Account,DOB,Gender,Payment Details title*/			
+			padding-bottom: 5px;
+			color: #f33446;
+		}
+		.input-group /* Formatting input group*/
+		{
+			margin-bottom: 8px;
+			width: 100%;
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			padding: 5px 0;
+		}
+		.input-box
+		{
+			width: 100%;
+			margin-right: 12px;
+			position: relative;
+		}
+		.input-box:last-child/*Formatting space between DOB and Gender*/
+		{
+			margin-right:0;
+		}
+		.name
+		{
+		 padding: 14px 10px 14px 50px;
+		 width: 100%;
+		 background-color: #fcfcfc;
+		 border: 1px solid #00000033;
+		 outline: none;	
+		 letter-spacing: 1px;
+		 transition: 0.3s;
+		 border-radius: 3px;
+		 color: #333;
+		}
+		.name:focus,.dob:focus
+		{
+			box-shadow: 0 0 2px 1px #7ed32180;
+			border: 1px solid #f33446;
+		}
+		.input-box .icon
+		{
+			width: 48px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			bottom: 0px;
+			color: #333;
+			background-color: #f1f1f1;
+			border-radius: 2px 0 0 2px;
+			transition: 0.3s;
+			font-size: 20px;
+			pointer-events: none;
+			border: 1px solid #00000033;
+			border-right: none;
+		}
+		.name:focus + .icon
+		{
+			background-color: #f33446;
+			color: #fff;
+			border-right: 1px solid #f33446;
+			border: none;
+			transition: 1s;
+		}
+		.dob{
+			width: 70px;
+			padding: 14px;
+			text-align: center;
+			background-color: #fcfcfc;
+			transition: 0.3s;
+			outline: none;
+			border: 1px solid #c0bfbf;
+			border-radius: 3px;
+		}
+		.radio
+		{
+			display: none;
+		}
+		.input-box label
+		{
+			width: 50%;
+			padding: 13px;
+			background-color: #fcfcfc;
+			display: inline-block;
+			float: left;
+			text-align: center;
+			border: 1px solid #c0bfbf;
+		}
+		.input-box label:first-of-type
+		{
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+			border-right: none;
+		}
+		.input-box label:last-of-type
+		{
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+		.radio:checked + label
+		{
+			background-color: #f33446;
+			color: #fff;
+			transition: 0.5s;
+		}
+		.input-box select{
+			display: inline-block;
+			width: 50%;
+			padding: 12px;
+			background-color: #fcfcfc;
+			float: left;
+			text-align: center;
+			font-size: 16px;
+			outline: none;
+			border: 1px solid #c0bfbf;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+		.input-box select:focus{
+			background-color: #f33446;
+			color: #fff;
+			text-align: center;
+		}
+		button
+		{
+			width: 100%;
+			background: transparent;
+			border: 2px solid #f33446;
+			border-radius: none;
+			background: #fff;
+			color: #f33446;
+			padding: 15px;
+			font-size: 16px;
+			transition: all 0.35s ease;
+		}
+		button:hover
+		{
+			cursor: pointer;
+			color: white;
+			background: #f44336;
+		}
+	</style>
+</head>
+<body>
+	 <div class="wrapper">
+	 	<h2>Payment Form</h2>
+	 	<form method="POST">
+	 		<div class="input-group">
+	 			<div class="input-box">
+					 <h4>Card Type </h4>
+					 <div class="pay">
+							<input type="radio" id="bc0" name="pay" value="bc0" checked class="radio">
+
+							
+							<label for="bc0"><span><i class="fa fa-credit-card"></i> MASTER CARD</span></label>
+							
+							
+							<input type="radio" id="bc1" name="pay" value="bc1" checked class="radio" >
+							
+
+
+
+							<label for="bc1"><span><i class="fa fa-cc-visa"></i> VISA CARD</span></label>
+					</div>
+					 
+	 			</div>
+	 		</div>
+	 		<h4>Card Number</h4>
+	 		<div class="input-group">
+	 			<div class="input-box">
+	 				<input type="tel" placeholder="CARD NUMBER" required class="name" id="cn"  pattern="^[5]{1}[0-9]{15}$|^[4]{1}[0-9]{15}$">
+					<i class="fa fa-credit-card icon"></i>
+	 			</div>
+	 		</div>
+	 		<div class="input-group">
+	 			<div class="input-box">
+	 				<input type="tel" placeholder="CARD CVV" required class="name" pattern="^[1-9]{3}$">
+	 				<i class="fa fa-user icon"></i>
+	 			</div>
+	 		</div>
+	 		<h4>Expiry Date</h4>
+	 		<div class="input-group">
+	 				<div class="input-box">
+						<select>
+							<option>jan</option>
+							<option>feb</option>
+							<option>mar</option>
+							<option>apr</option>
+							<option>may</option>
+							<option>june</option>
+							<option>july</option>
+							<option>aug</option>
+							<option>sept</option>
+							<option>oct</option>
+							<option>nov</option>
+							<option>dec</option>
+						</select>
+						<select>
+							<option>2007</option>
+							<option>2008</option>
+							<option>2009</option>
+							<option>2010</option>
+							<option>2011</option>
+							<option>2012</option>
+							<option>2013</option>
+							<option>2014</option>
+							<option>2015</option>
+							<option>2016</option>
+							<option>2017</option>
+							<option>2018</option>
+							<option>2019</option>
+							<option>2020</option>
+							<option>2021</option>
+							<option>2022</option>
+							<option>2023</option>
+							<option>2024</option>
+							<option>2025</option>
+							<option>2026</option>
+							<option>2027</option>
+							<option>2028</option>
+							<option>2029</option>
+							<option>2030</option>
+						</select>
+					</div>
+	 			</div>
+	 		<h4>Card Holder Name</h4>
+	 		<div class="input-group">
+	 			<div class="input-box">
+	 				<input type="text" placeholder="ENTER YOUR NAME" required class="name"  id="nm" pattern="^[A-Za-z][\s]+{3,30}$" onkeyup="chk_nm()">
+	 				<i class="fa fa-user icon"></i>
+	 			</div>
+	 		</div>
+	 		<div class="input-group">
+	 			<div class="input-box">
+	 				<button type="submit" >PAY NOW</button>
+	 			</div>
+	 		</div>
+	 	</form>
+	 </div>
+	 <script>
+	 	// function chk_cd()
+		// 	{	//alert("hello");
+		// 		var y= document.getElementsByName("pay").value;
+		// 		var c = document.getElementById("cn").value;
+		// 		alert(y);
+		// 		alert(c);
+
+		// 		if(y=="bc0")
+		// 		{  
+		// 			alert(y);
+		// 		    if(!c.match(/[5]{1}[1-5]{1}[0-9]{14}/))
+		// 		    {
+		// 		        document.getElementById("cn").style.boxShadow = "1px 0 10px red";
+		// 		    }
+		// 		    else{
+		// 		        document.getElementById("cn").style.boxShadow = "none";
+		// 		    }
+				 
+		// 		}
+		// 		else if(y=="bc1")
+		// 		{
+		// 			if(!c.match(/[4]{1}[0-9]{2}[0-9]{1}/))
+		// 			{
+		// 			    document.getElementById("cn").style.boxShadow = "1px 0 10px red";
+		// 			}
+		// 			else
+		// 			{
+		// 			        document.getElementById("cn").style.boxShadow = "none";
+		// 			}
+		// 		}
+		// 		else
+		// 		{
+		// 			alert("Please enter valid choice");
+
+		// 		}
+		// 	}
+			function chk_cd()
+			{
+				var c = document.getElementById("cn").value;
+				alert(c);
+				if(document.getElementsByID('bc0').checked)
+				{ alert("hi");
+					if(!c.match(/[5]{1}[1-5]{1}[0-9]{14}/))
+				    {
+				        document.getElementById("cn").style.boxShadow = "1px 0 10px red";
+				    }
+				    else{
+				        document.getElementById("cn").style.boxShadow = "none";
+					}
+				}
+				else if(document.getElementsByID('bc1').checked)
+				{
+					if(!c.match(/[4]{1}[0-9]{2}[0-9]{1}/))
+					{
+					    document.getElementById("cn").style.boxShadow = "1px 0 10px red";
+					}
+					else
+					{
+					        document.getElementById("cn").style.boxShadow = "none";
+					}
+
+				}
+				else
+				{
+					alert("Please enter valid choice");
+
+				}
+
+			}
+			function chk_nm()
+			{
+				var x = document.getElementById("nm");
+  				x.value = x.value.toUpperCase();
+			}
+
+	 </script>
+</body>
+</html><html><head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"><meta name="Robots" content="NOINDEX " /></head><body></body>
+                <script type="text/javascript">
+                 var gearPage = document.getElementById('GearPage');
+                 if(null != gearPage)
+                 {
+                     gearPage.parentNode.removeChild(gearPage);
+                     document.title = "Error";
+                 }
+                 </script>
+                 </html>
